@@ -1,0 +1,22 @@
+{
+    "split": "summe_can_2.json",
+    "datapath": "eccv16_dataset_summe_google_pool5",
+    "save_name": "Combined_can_deter_2",
+    "reg": 1e-05,
+    "num_epochs": 50,
+    "learning_rate": 5e-05,
+    "Model_params": {
+        "Model": "VASNetPC"
+    },
+    "loss_function": "MSE",
+    "total_splits": 5,
+    "data_aug": {
+        "Flip": {
+            "probability": 0.0
+        },
+        "Shufflebylength": {
+            "probability": 0.0,
+            "segment_length": 24
+        }
+    }
+}

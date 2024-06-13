@@ -1,0 +1,18 @@
+{
+    "split": "summe_can_1.json",
+    "datapath": "eccv16_dataset_summe_google_pool5",
+    "save_name": "Intrashot_low_prob_can_1",
+    "reg": 1e-05,
+    "num_epochs": 50,
+    "learning_rate": 5e-05,
+    "Model_params": {
+        "Model": "VASNetPC"
+    },
+    "loss_function": "MSE",
+    "total_splits": 5,
+    "data_aug": {
+        "IntraShotShuffle": {
+            "probability": 0.7
+        }
+    }
+}

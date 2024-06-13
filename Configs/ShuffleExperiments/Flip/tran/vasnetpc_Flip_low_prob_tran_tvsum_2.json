@@ -1,0 +1,18 @@
+{
+    "split": "tvsum_tran_2.json",
+    "datapath": "eccv16_dataset_tvsum_google_pool5",
+    "save_name": "Flip_low_prob_tran_2",
+    "reg": 1e-05,
+    "num_epochs": 50,
+    "learning_rate": 5e-05,
+    "Model_params": {
+        "Model": "VASNetPC"
+    },
+    "loss_function": "MSE",
+    "total_splits": 5,
+    "data_aug": {
+        "Flip": {
+            "probability": 0.7
+        }
+    }
+}
