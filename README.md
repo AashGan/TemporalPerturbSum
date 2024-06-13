@@ -19,4 +19,4 @@ This work wouldn't have been possible without invaluable contributions made by o
 - [ ] Add bash script to run experiments off of cloud 
 - [ ] Generate video summaries based on threshold
 - [ ] Implenting KTS based summary generator
-- [ ] 
+- [ ] Hosting for datasets 
