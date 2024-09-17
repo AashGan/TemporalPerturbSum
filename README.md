@@ -9,9 +9,9 @@ To retrieve the exact results made from the paper, the weights are not given wit
 
 This work wouldn't have been possible without invaluable contributions made by other researchers within video Summarization such as
 
-    1. Fajtl et al with VASNet
-    2. DSNet
-    3. Apostolidis et al with PGL-SUM
+1. [VASNet](https://github.com/ok1zjf/VASNet/tree/master)
+2. [DSNet](https://github.com/li-plus/DSNet)
+3. [PGLSUM](https://github.com/e-apostolidis/PGL-SUM/tree/master/model)
 
 
 
