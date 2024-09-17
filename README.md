@@ -14,9 +14,34 @@ This work wouldn't have been possible without invaluable contributions made by o
     3. Apostolidis et al with PGL-SUM
 
 
-# TODO
 
-- [ ] Add bash script to run experiments off of cloud 
-- [ ] Generate video summaries based on threshold
-- [ ] Implenting KTS based summary generator
-- [ ] 
+# Instructions
+
+## Data
+
+Download the pre-processed TVSum and SumMe datasets alongside the original TVSum annotation file from this [link](). Place the two .h5 files in Data/h5datasets and place the .m file Utils/ folders respectively.
+
+## Run an experiment 
+An experiment can be run with the following commands
+
+ ```bash
+python  train-split.py --config_path path/to/config
+```
+
+For the Multi-Layer perceptron experiments described in the paper, you can use the following execution
+
+```bash
+python mlp-split.py --config_path path/to/config
+```
+
+To evaluate the model, it can be done by running the following scripts 
+```bash
+python  evaluate-split.py --config_path path/to/config --delete_weights
+```
+
+## Important notes
+
+- The experiments are always configured to run on the first gpu, to adjust that please adjust the ```python device``` variable in all of the scripts
+
+
+

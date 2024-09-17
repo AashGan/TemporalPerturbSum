@@ -83,7 +83,6 @@ class MultiHeadSelfAttention(nn.Module):
         self.scale_param = nn.Parameter(torch.tensor(math.sqrt(self.head_dim)),requires_grad=kwargs.get('enable_scale',False))
    
     def change_for_mul(self,vector):
-        # This does a reshape so that I get the dimensions to be (B,Heads,Seq Len,Head_Dim)
         
         return vector.view(vector.shape[0],self.heads,vector.shape[1],self.head_dim)
     
@@ -107,9 +106,6 @@ class MultiHeadSelfAttention(nn.Module):
         value = self.change_for_mul(value)
 
         attention_scores = torch.matmul(query/self.scale_param, key.transpose(-1, -2))
-        # Scaling factor Needs to be dependent on my approach
-        # Current ideas (0.06,learnable)
-        #attention_scores = attention_scores / math.sqrt(self.head_dim)
 
         if mask is not None:
             if mask.device != attention_scores.device:

@@ -1,4 +1,4 @@
-# Taken from PGLSUM github
+# Taken from PGLSUM github : https://github.com/e-apostolidis/PGL-SUM
 #TODO sanity check
 import numpy as np
 from scipy.stats import rankdata
@@ -94,7 +94,7 @@ def generate_summary_single(shot_bound,score,n_frames,positions,return_shot_info
         return shot_lengths, shot_imp_scores,selected,summary
     return summary
 
-
+# Source: https://github.com/mayu-ot/rethinking-evs/blob/master/src/tools/io.py
 def load_tvsum_mat(filename):
     data = hdf5storage.loadmat(filename, variable_names=['tvsum50'])
     data = data['tvsum50'].ravel()
@@ -116,10 +116,11 @@ def load_tvsum_mat(filename):
         data_list.append((item_dict))
     
     return data_list
-#TODO  : Mention it and experiment with both upsampling the model output or downsampling the user score.
+
+
 def evaluate_correlation(scores,dataset,video_names,dataset_name='tvsum'):
     if dataset_name=="tvsum":
-        data = load_tvsum_mat('Utils//ydata-tvsum50.mat')
+        data = load_tvsum_mat('Utils/ydata-tvsum50.mat')
         all_correlations_tau_split =[] 
         all_correlations_spearman_split =[]
         evaluation_dict = {}

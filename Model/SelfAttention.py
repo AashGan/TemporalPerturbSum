@@ -2,6 +2,8 @@ import torch
 import numpy as np
 import math
 import torch.nn as nn
+
+# Source: https://github.com/ok1zjf/VASNet/blob/master/vasnet_model.py
 class SelfAttention(nn.Module):
 
     def __init__(self,input_size=1024, output_size=1024):
@@ -123,6 +125,8 @@ class VASNet(nn.Module):
         y = y.view(1, -1)
 
         return y        
+    
+# An adapted version of the Self Attention model that incorporates self attention    
 class VASNetPC(nn.Module):
 
     def __init__(self,depth=1,dim=1024,pos_enc=True,**kwargs):

@@ -4,9 +4,8 @@ import torch.nn as nn
 import numpy as np
 import math
 import torch.nn.functional as F
-#Modified PGLSum which removes the attention weights since it isn't relevant for our task.
-#ALSO MODIFIED TO ACTUALLY BE ABLE TO USE LOCAL SELF ATTENTION
-# Source: 
+
+# Source:  https://github.com/e-apostolidis/PGL-SUM/tree/master/model/layers
 class SelfAttention(nn.Module):
     def __init__(self, input_size=1024, output_size=1024, freq=10000, heads=1, pos_enc=None):
         """ The basic (multi-head) Attention 'cell' containing the learnable parameters of Q, K and V

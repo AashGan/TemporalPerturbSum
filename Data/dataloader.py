@@ -1,13 +1,12 @@
 import torch
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset
 import h5py
 import numpy as np
 import json
 import os
 import torch.nn.functional as F
-# TODO: Move the data augmentation to a separate file
-# Adapted from sources : 
-datasets = os.listdir('Data\\h5datasets')
+# Adapted from sources : https://github.com/e-apostolidis/PGL-SUM/blob/master/model/data_loader.py,  https://github.com/li-plus/DSNet/blob/master/src/helpers/data_helper.py
+datasets = os.listdir('Data/h5datasets')
 splits_dir = 'splits'
 class VideoData(Dataset):
     def __init__(self,mode,splits_json,split_index = 0,transforms = None,**kwargs):
@@ -21,7 +20,7 @@ class VideoData(Dataset):
         with open(splits_json) as f:
             data = json.loads(f.read())
             self.all_datapoints = data[split_index][mode +'_keys']
-        self._create_data_dict('Data\\h5datasets')
+        self._create_data_dict('Data/h5datasets')
         if transforms:
             assert type(transforms) == list, "Ensure the transformations are given as a list"
             self.transforms = transforms
@@ -210,7 +209,6 @@ class IntraShotShuffle(object):
     def shuffle(self,features,gtscore,**kwargs):
         if torch.rand(1)>self.probability:
             shot_boundaries = kwargs.get('shot_bounds')
-            a_index = 0
             for shot_bound in torch.asarray(shot_boundaries):
                 randperm = torch.randperm(len(torch.arange(shot_bound[0],shot_bound[1]+1)))
                 features[shot_bound[0]:shot_bound[1]+1] = features[shot_bound[0]:shot_bound[1]+1][randperm]
@@ -225,7 +223,6 @@ class MLPDataloader(Dataset):
         super().__init__()
         self.mode = mode
         self.dataset_dict = {}
-        self.experimental = kwargs.get('experimental',None)
         splits_json = os.path.join(splits_dir,splits_json)
         assert os.path.exists(splits_json), "The JSON is not configured correctly"
         with open(splits_json) as f:

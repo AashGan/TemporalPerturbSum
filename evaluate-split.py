@@ -75,7 +75,7 @@ def inference():
 
     weight_path = os.path.join(args.weights_path,config['save_name'],dataset_name,config['Model_params']['Model'])
     assert os.path.exists(os.path.join(args.weights_path,config['save_name'],dataset_name,config['Model_params']['Model'])), "Model weights do not exist or pathing is incorrect, check path"
-    dataset = h5py.File(os.path.join('Data\\h5datasets',config['datapath']+'.h5'))
+    dataset = h5py.File(os.path.join('Data/h5datasets',config['datapath']+'.h5'))
     
     all_splits_f1_scores = {}
     all_splits_correlations = {}
@@ -171,7 +171,7 @@ def inference():
         # Loading the weights as : "weights/experiment/model"
     weight_path = os.path.join(args.weights_path,config['save_name'],dataset_name,config['Model_params']['Model'])
     assert os.path.exists(os.path.join(args.weights_path,config['save_name'],dataset_name,config['Model_params']['Model'])), "Model weights do not exist or pathing is incorrect, check path"
-    dataset = h5py.File(os.path.join('Data\\h5datasets',config['datapath']+'.h5'))
+    dataset = h5py.File(os.path.join('Data/h5datasets',config['datapath']+'.h5'))
     
     output_dict ={}
     all_splits_f1_scores = {}

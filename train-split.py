@@ -59,10 +59,9 @@ def train():
         # Format for saving: Experiment/dataset/model
     if not os.path.exists(os.path.join(args.save_path,config['save_name'],dataset_name,config['Model_params']['Model'] )):
         os.makedirs(os.path.join(args.save_path,config['save_name'],dataset_name,config['Model_params']['Model'] ))
-    
     save_path = os.path.join(args.save_path,config['save_name'],dataset_name,config['Model_params']['Model'] )
     print(save_path)
-    dataset = h5py.File(os.path.join('Data\\h5datasets',config['datapath']+'.h5'))
+    dataset = h5py.File(os.path.join('Data/h5datasets',config['datapath']+'.h5'))
     if "params" in config['Model_params']:
         params = config['Model_params']['params']
     else:
