@@ -24,7 +24,7 @@ pip install -r requirements.txt
 ```
 ## Data
 The preprocessed dataset as provided by the paper "Video summarization with long short term memory" alongside the annotations from the original publication of the TVSum dataset 
-Download the pre-processed TVSum and SumMe datasets alongside the original TVSum annotation file from this [https://drive.google.com/drive/folders/1ROGe1ifXWwzMJKY1SYPsHAHFwpNJWabS?usp=drive_link](link). Place the two .h5 files in Data/h5datasets and place the .m file Utils/ folders respectively.
+Download the pre-processed TVSum and SumMe datasets alongside the original TVSum annotation file from this [link](https://drive.google.com/drive/folders/1ROGe1ifXWwzMJKY1SYPsHAHFwpNJWabS?usp=drive_link). Place the two .h5 files in Data/h5datasets and place the .m file Utils/ folders respectively.
 
 ## Run an experiment 
 An experiment can be run with the following commands
