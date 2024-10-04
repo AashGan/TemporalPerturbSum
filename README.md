@@ -4,7 +4,7 @@ This is the repository for this project on the analysis as to whether video summ
 
 # Weights and replication
 
-To retrieve the exact results made from the paper, the weights are not given with the repository, please contact Aashutosh.ganesh@maastrichtuniversity.nl for the specific weights for replication. 
+To retrieve the exact results made from the paper, the weights are not given with the repository, please contact Aashutosh.ganesh@maastrichtuniversity.nl for the specific weights for replication. Due to differences in CUDA versions, pytorch versions and the type of GPU, exact results are not replicable via training. However, the results should be within the ranges as reported in the paper and the original results can be obtained via the original weights. 
 # Acknowledgements
 
 This work wouldn't have been possible without invaluable contributions made by other researchers within video Summarization such as
@@ -16,10 +16,15 @@ This work wouldn't have been possible without invaluable contributions made by o
 
 
 # Instructions
+## Setup
+Run the following command to setup the environment for the experiments. Highly recommended to set up a venv or conda environment for these experiments.
 
+```bash
+pip install -r requirements.txt
+```
 ## Data
-
-Download the pre-processed TVSum and SumMe datasets alongside the original TVSum annotation file from this [link](). Place the two .h5 files in Data/h5datasets and place the .m file Utils/ folders respectively.
+The preprocessed dataset as provided by the paper "Video summarization with long short term memory" alongside the annotations from the original publication of the TVSum dataset 
+Download the pre-processed TVSum and SumMe datasets alongside the original TVSum annotation file from this [https://drive.google.com/drive/folders/1ROGe1ifXWwzMJKY1SYPsHAHFwpNJWabS?usp=drive_link](link). Place the two .h5 files in Data/h5datasets and place the .m file Utils/ folders respectively.
 
 ## Run an experiment 
 An experiment can be run with the following commands
@@ -28,7 +33,7 @@ An experiment can be run with the following commands
 python  train-split.py --config_path path/to/config
 ```
 
-For the Multi-Layer perceptron experiments described in the paper, you can use the following execution
+For the Multi-Layer perceptron experiments described in the paper, you can run the following
 
 ```bash
 python mlp-split.py --config_path path/to/config
@@ -41,7 +46,7 @@ python  evaluate-split.py --config_path path/to/config --delete_weights
 
 ## Important notes
 
-- The experiments are always configured to run on the first gpu, to adjust that please adjust the ```python device``` variable in all of the scripts
+- The experiments are always configured to run on the first gpu, to adjust that please adjust the ```python device``` variable in all of the scripts or set ```CUDA_VISIBLE_DEVICES``` to your preferred device prior to running any of the scripts
 
 
 
