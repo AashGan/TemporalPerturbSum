@@ -4,7 +4,7 @@ This is the repository for this project on the analysis as to whether video summ
 
 # Weights and replication
 
-To retrieve the exact results made from the paper, please contact Aashutosh.ganesh@maastrichtuniversity.nl for the specific weights for replication. Due to differences in CUDA versions, pytorch versions and the type of GPU, there will be differences in the end results from training. 
+To retrieve the exact results made from the paper, please contact Aashutosh.ganesh@maastrichtuniversity.nl for the specific weights for replication. Due to differences in CUDA versions, pytorch versions and the type of GPU, there will be slight differences in the end results from training. 
 
 # Acknowledgements
 
