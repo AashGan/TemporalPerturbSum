@@ -4,7 +4,7 @@ This is the repository for this project on the analysis as to whether video summ
 
 # Weights and replication
 
-To retrieve the exact results made from the paper, please contact Aashutosh.ganesh@maastrichtuniversity.nl or download the weights from these links [1](https://zenodo.org/uploads/13913019) and [2](https://zenodo.org/records/13909356). Due to differences in CUDA versions, pytorch versions and the type of GPU, there will be slight differences in the end results from training. 
+To retrieve the exact results made from the paper, please contact Aashutosh.ganesh@maastrichtuniversity.nl or download the weights from these links [1](https://zenodo.org/records/13913019) and [2](https://zenodo.org/records/13909356). Due to differences in CUDA versions, pytorch versions and the type of GPU, there will be slight differences in the end results from training. 
 
 # Acknowledgements
 
